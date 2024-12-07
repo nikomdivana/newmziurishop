@@ -31,4 +31,19 @@
         <button type="submit" class="btn btn-primary">Search</button>
     </div>
 </form>
+
+<div class="row row-cols-4 mt-4 g-4">
+    {% for product in products %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="https://m.media-amazon.com/images/M/MV5BZmU5ZDE5NTItN2I1YS00ZmFmLTk3YTgtNzQwOGNkYzFjOWRkXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX500_CR0,47,500,281_.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
