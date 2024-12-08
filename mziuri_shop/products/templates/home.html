@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <form class="row g-3">
     <div class="col-md-6">
         <label for="product_name" class="form-label">Product Name</label>
@@ -40,7 +41,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{product.name}}</h5>
                     <p class="card-text">{{product.description}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>

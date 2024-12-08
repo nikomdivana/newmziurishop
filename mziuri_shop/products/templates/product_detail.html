@@ -7,13 +7,13 @@
     </div>
     <div class="col col-8">
         <div class="d-flex">
-            <div>6570 ნახვა</div>
-            <div class="ms-5">07/12/2024 16:15</div>
+            <div>{{ product.views }} ნახვა</div>
+            <div class="ms-5">{{ product.create_date }}</div>
         </div>
         <div class="card-body">
-            <h5 class="card-title">Product Name</h5>
-            <p class="fw-bold card-text"> 35$ </p>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="fw-bold card-text"> {{ product.price }}$ </p>
+            <p class="card-text">{{ product.description }}</p>
         </div>
     </div>
 </div>
