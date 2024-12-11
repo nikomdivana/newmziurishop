@@ -5,7 +5,7 @@
 <form class="row g-3">
     <div class="col-md-6">
         <label for="product_name" class="form-label">Product Name</label>
-        <input type="email" class="form-control" id="product_name" name="product_name">
+        <input type="text" class="form-control" id="product_name" name="product_name">
     </div>
     <div class="col-md-3">
         <label for="min_price" class="form-label">Min Price</label>
@@ -19,9 +19,9 @@
         <label for="category" class="form-label">Category</label>
         <select id="category" name="category" class="form-select">
             <option disabled selected>Choose...</option>
-            <option>Clothes</option>
-            <option>Electronics</option>
-            <option>Food</option>
+            {% for category in categories %}
+                <option value="{{category.id}}">{{category.name}}</option>
+            {% endfor %}
         </select>
     </div>
     <div class="col-6">
@@ -40,6 +40,7 @@
                 <img src="https://m.media-amazon.com/images/M/MV5BZmU5ZDE5NTItN2I1YS00ZmFmLTk3YTgtNzQwOGNkYzFjOWRkXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX500_CR0,47,500,281_.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text fw-bold">{{product.price}} $</p>
                     <p class="card-text">{{product.description}}</p>
                     <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Go somewhere</a>
                 </div>
