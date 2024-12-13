@@ -13,24 +13,28 @@ def home(request):
 
     min_price = request.GET.get('min_price')
     if min_price:
-        filters['price__gt'] = min_price
+        filters['price__gte'] = min_price
 
     max_price = request.GET.get('max_price')
     if max_price:
-        filters['price__lt'] = max_price
+        filters['price__lte'] = max_price
 
     address = request.GET.get('address')
     if address:
         filters['address__icontains'] = address
 
-    category =  request.GET.get('category')
+    category = request.GET.get('category')
     if category:
         filters['category_id'] = category
 
+    order_by = request.GET.get('order_by')
+
     products = Product.objects.filter(**filters)
+    if order_by:
+        products = products.order_by(order_by)
+
     categories = Category.objects.all()
-    return render(request, 'home.html', {'products': products,
-                                                              'categories': categories})
+    return render(request, 'home.html', {'products': products, 'categories': categories})
 
 
 def product_detail(request, id):

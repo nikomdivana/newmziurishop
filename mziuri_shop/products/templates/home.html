@@ -32,7 +32,19 @@
         <button type="submit" class="btn btn-primary">Search</button>
     </div>
 </form>
-
+<div class=""> 
+ ¯\_(ツ)_/¯
+</div>
+<form method="GET" action="">
+    <label for="sort">sort:</label>
+    <select name="order_by" id="sort" onchange="this.form.submit()">
+        <option value="">choose</option>
+        <option value="name">name (a-z)</option>
+        <option value="-name">name (z-a)</option>
+        <option value="price">price (zrdadi)</option>
+        <option value="-price">price (klebadi)</option>
+    </select>
+</form>
 <div class="row row-cols-4 mt-4 g-4">
     {% for product in products %}
         <div class="col">
@@ -48,4 +60,6 @@
         </div>
     {% endfor %}
 </div>
+
+
 {% endblock %}
