@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col col-4">
+        <img src="https://m.media-amazon.com/images/M/MV5BZmU5ZDE5NTItN2I1YS00ZmFmLTk3YTgtNzQwOGNkYzFjOWRkXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX500_CR0,47,500,281_.jpg" class="card-img-top" alt="...">
+    </div>
+    <div class="col col-8">
+        <div class="d-flex">
+            <div>{{ product.views }} ნახვა</div>
+            <div class="ms-5">{{ product.create_date }}</div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="fw-bold card-text"> {{ product.price }}$ </p>
+            <p class="card-text">{{ product.description }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
